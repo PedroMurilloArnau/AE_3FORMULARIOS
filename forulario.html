@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <title>Form</title>
+</head>
+<body >
+    <head><h1>Pizzeria Ópera</h1></head>
+
+    <form id="formulario" action="URL" method="post">
+
+        <fieldset id="datosPersonales">
+            <legend>Datos de Contacto</legend>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="datos" placeholder="Introduce tu nombre"><br>
+            <label for="direccion">Dirección:</label>
+            <input type="text" id="direccion" name="datos" placeholder="Introduce tu dirección"><br>
+            <label for="tlf">Teléfono:</label>
+            <input type="tel" id="tlf" name="datos" placeholder="Introduce tu numero de telefono" ><br>
+            <label for="mail">Email:</label>
+            <input type="text" id="mail" name="datos" placeholder="Introduce tu correo">
+        </fieldset>
+
+        <fieldset>
+            <legend>Datos del pedido</legend>
+            <div id="tamano">
+            <label for="med">Elige el tamaño de la pizza:</label><br>
+            <input type="radio" value="p" name="tamano" id="peq">Pequeña
+            <input type="radio" value="m" name="tamano" id="med">Mediana
+            <input type="radio" value="g" name="tamano" id="gra">Grande
+            </div>
+
+            <div id="ingre">
+                <label for="">Elige ingredientes:</label><br>
+                <input type="checkbox" value="jamon" name="ingrediente" id="jamon">Jamón
+                <input type="checkbox" value="queso" name="ingrediente" id="queso">Queso
+                <input type="checkbox" value="stomate" name="ingrediente" id="stomate">Salsa de Tomate
+                <input type="checkbox" value="bacon" name="ingrediente" id="bacon">Bacon
+            </div>
+
+        </fieldset>
+  <input type="submit" value="Hacer Pedido">
+    </form>
+
+    <script src="js/validacion.js"></script>
+</body>
+</html>
