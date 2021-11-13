@@ -31,7 +31,7 @@ function validar() {
     if(email.value.trim() == "") {
         mensaje += "Rellena el email. \n"
     } else {
-        reEmail = new RegExp('^([0-9A-Za-z]+)@([0-9A-Za-z]+.[0-9A-Za-z]+)$');
+        reEmail = new RegExp('^([0-9A-Za-z]+(([0-9A-Za-z]+\.)*))@(([0-9A-Za-z]+\.)+[0-9A-Za-z]+)$');
         if (email.value.trim().match(reEmail) == null) {
             mensaje += "Formato de email incorrecto. \n"
         }
