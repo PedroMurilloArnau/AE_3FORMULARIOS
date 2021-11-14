@@ -17,10 +17,8 @@ for( i=0; i< sum.length;++i){
 
 }
 
-alert("El precio total es de " + total+ " €")  
+alert("El pedido ha sido enviado!!! "+
+    "El precio total es de " + total+ " €")  
     
 }
-window.onload = function(){
-    formulario.onsubmit = calcuprecio;//si la funcion validacion me retorna true, mando la 
-                                    //información
-}
+
