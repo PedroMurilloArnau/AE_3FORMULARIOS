@@ -22,8 +22,8 @@ function validar() {
         /* Los teléfonos en España tienen 9 cifras,
         los móviles comienzan por 6 ó 7,
         y los teléfonos fijos comienzan por 8 o por 9 */
-        reTelf = /^[6-9][0-9]{8}/;
-        if (telefono.value.trim().match(reTelf) == null || telefono.value.trim().length > 9) {
+        reTelf = /^[6-9][0-9]{8}$/;
+        if (telefono.value.replace(/\s+/g, '').match(reTelf) == null) {
             mensaje += "Formato de teléfono incorrecto (deben ser 9 cifras). \n"
         }
     }
@@ -31,7 +31,7 @@ function validar() {
     if(email.value.trim() == "") {
         mensaje += "Rellena el email. \n"
     } else {
-        reEmail = new RegExp('^([0-9A-Za-z]+(([0-9A-Za-z]+\.)*))@(([0-9A-Za-z]+\.)+[0-9A-Za-z]+)$');
+        reEmail = new RegExp('^([0-9A-Za-z]+(((\.|_|-)[0-9A-Za-z]+)*))@(([0-9A-Za-z]+\.)+[0-9A-Za-z]+)$');
         if (email.value.trim().match(reEmail) == null) {
             mensaje += "Formato de email incorrecto. \n"
         }
@@ -40,15 +40,29 @@ function validar() {
     tamano = document.getElementsByName("medida");
     let seleccionado = false;
     let precio;
-    for(var i=0; i<tamano.length; i++) {
+    let opcion;
+    for(let i=0; i<tamano.length; i++) {
         if (tamano[i].checked) {
             seleccionado = true;
-            precio = (i+1)*5;
+            opcion = i;
+            //precio = (i+1)*5;
             break;        
         }
     }
     if(!seleccionado) {
         mensaje += "Elige un tamaño de pizza. \n";
+    } else {
+        switch (opcion) {
+            case 0:
+                precio = 5;
+                break;
+            case 1:
+                precio = 10;
+                break;
+            case 2:
+                precio = 15;
+                break;
+        }
     }
 
     if(!(jam.checked || champ.checked || pin.checked || aceit.checked)) {
